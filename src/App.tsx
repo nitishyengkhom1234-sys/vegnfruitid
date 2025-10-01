@@ -281,8 +281,8 @@ const App: React.FC = () => {
 
   const getDaysText = (days: number): string => {
     if (days > 1) return `${days.toFixed(1)} days`;
-    if (days >= 0 && days <= 1) return `Ready!`;
-    return `Past Peak`;
+    if (days >= 0 && days <= 1) return `${days.toFixed(1)} days (Ready!)`;
+    return `${days.toFixed(1)} days (Past Peak)`;
   }
   
   if (!selectedProduce) {
