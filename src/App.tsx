@@ -27,6 +27,24 @@ const LoadingSpinner: React.FC<{text?: string}> = ({ text = "Analyzing..."}) => 
 
 
 const App: React.FC = () => {
+  const API_KEY = process.env.API_KEY;
+
+  if (!API_KEY) {
+    return (
+      <div className="p-4 sm:p-8 flex items-center justify-center min-h-screen">
+        <div className="bg-white p-6 sm:p-10 rounded-2xl max-w-2xl w-full border border-red-200 shadow-[0_8px_25px_rgba(0,0,0,0.15),0_0_15px_rgba(255,60,60,0.1)] text-center">
+          <h1 className="text-2xl font-bold text-red-700">Configuration Error</h1>
+          <p className="text-gray-600 mt-2">The Gemini API key is not configured.</p>
+          <p className="text-gray-500 mt-4 text-sm">
+            Please add your API key as an environment variable named{' '}
+            <code className="bg-red-100 text-red-800 p-1 rounded font-mono">API_KEY</code>{' '}
+            in your Vercel project settings and redeploy the application.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   const [selectedProduceKey, setSelectedProduceKey] = useState<ProduceKey>('apple');
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imagePreviewUrl, setImagePreviewUrl] = useState<string | null>(null);
