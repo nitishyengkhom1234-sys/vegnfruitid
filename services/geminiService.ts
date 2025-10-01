@@ -2,6 +2,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import type { PredictionResult } from "../types";
 import { PRODUCE } from "../constants";
 
+// FIX: Initialize the Google GenAI client using process.env.API_KEY as per the guidelines.
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export async function identifyProduce(base64Image: string, mimeType: string): Promise<string> {
