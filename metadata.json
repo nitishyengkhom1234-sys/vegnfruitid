@@ -1,5 +1,5 @@
 {
-  "name": "Project ripo25",
+  "name": "Copy of Project ripo25",
   "description": "Project ripo25 is an AI-powered tool to estimate the ripeness of fruits. Upload or capture a photo of a fruit, and the Gemini API will predict how many days until it reaches peak ripeness, its current status, and provide helpful recommendations.",
   "requestFramePermissions": [
     "camera"
